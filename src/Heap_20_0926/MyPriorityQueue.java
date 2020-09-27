@@ -46,7 +46,7 @@ public class MyPriorityQueue {
     }
 
     //大堆实现向下调整（堆顶元素最大）
-    public static void shiftDown(int[] array,int size,int index){
+    private static void shiftDown(int[] array,int size,int index){
         int parent = index;
         int child = 2 * parent +1;  //左子树
         //这个来判断当前的parent有没有子节点,因为是完全二叉树所以只需要判断有没有左子树即可
@@ -75,7 +75,7 @@ public class MyPriorityQueue {
         return array[0];
     }
 
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return size == 0 ;
     }
 
