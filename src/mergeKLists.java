@@ -25,6 +25,7 @@
 import java.util.PriorityQueue;
 
 public class mergeKLists {
+
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
@@ -56,5 +57,9 @@ public class mergeKLists {
             l2.next = mergeTwoLists(l1,l2.next);
             return l2;
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
