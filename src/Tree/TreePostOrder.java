@@ -53,8 +53,5 @@ class TreePostOrder {
         return ans;
     }
 
-    public static void main(String[] args) {
-        s
-    }
 
 }
