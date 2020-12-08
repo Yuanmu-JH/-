@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class TreeNode {
+public void TreeNode {
     int val;
    TreeNode left;
    TreeNode right;
@@ -50,5 +50,7 @@ class TreePostOrder {
         return ans;
     }
 
+    public static void main(String[] args) {
 
+    }
 }
