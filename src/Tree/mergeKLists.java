@@ -59,7 +59,5 @@ public class mergeKLists {
         }
     }
 
-    public static void main(String[] args) {
 
-    }
 }
