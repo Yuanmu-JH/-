@@ -44,7 +44,7 @@ public class Heap {
     }
 
     public static void main(String[] args) {
-        int[] array = {9,5,2,7,3,6,8};
+        int[] array = {9,5,2,7,3,6,9};
         createHeap(array,array.length);
         System.out.println(Arrays.toString(array));
 
