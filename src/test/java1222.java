@@ -11,4 +11,5 @@ public class java1222 {
             System.out.print(x);
         }
     }
+    pub
 }
