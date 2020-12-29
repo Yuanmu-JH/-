@@ -54,7 +54,7 @@ public class ArrayTest2 {
         }
     }
 
-    //冒泡排序：
+    //冒泡排序
     //外层控制遍历次数
     //已排序区间：[0,bound)
     //待排序区间：[bound,length]
