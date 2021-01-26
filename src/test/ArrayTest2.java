@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ArrayTest2 {
     public static void main(String[] args) {
-        int[] arr = {2,4,3,6,7,8,5,1,9};
-//        int [ ] arr = {2,4,6,11,23,45,55,67};
+//        int[] arr = {2,4,3,6,7,8,5,1,9};
+        int [ ] arr = {2,4,6,11,23,45,55,67};
 //        int pos = search(arr,5);//循环查找
 //        int pos = binarySearch(arr,45);//二分查找
 //        System.out.println(pos);
@@ -13,10 +13,34 @@ public class ArrayTest2 {
 //        bubblSort(arr); //数组有序化,冒泡排序
 //        Arrays.sort(arr);   //标准库中的快速排序
 //        reverse(arr);   //数组逆序
-        transform(arr);
-        System.out.println(Arrays.toString(arr));
+//        transform(arr);
+//        System.out.println(Arrays.toString(arr));
+//        int newarr[] = copyOf(arr);
+//        System.out.println(Arrays.toString(newarr));
+        System.out.println(toString(arr));
+    }
 
+    //实现一个方法 toString, 把一个整型数组转换成字符串. 例如数组 {1, 2, 3} , 返回的字符串为 "[1, 2, 3]", 注意 逗号 的位置和数量.
+    public static String toString(int[] arr){
+        String ret="[";
+        int i;
+        for(i=0;i<arr.length;i++){
+            if(i<arr.length-1){
+                ret+=arr[i]+", ";
+            }else if(i==arr.length-1){
+                ret+=arr[i]+"]";
+            }
+        }
+        return ret;
+    }
 
+    //数组拷贝
+    public static int[] copyOf(int []arr) {
+        int[] arr2=new int[arr.length];
+        for(int i=0;i<arr.length;i++) {
+            arr2[i] = arr[i];
+        }
+        return arr2;
     }
 
     public static void transform(int[] arr) {
