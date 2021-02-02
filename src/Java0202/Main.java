@@ -15,6 +15,47 @@ public class Main {
 
     public static void main(String[] args) {
         Node head = createList();
-        System.out.println(head.toString());
+        //循环遍历链表
+       for(Node cur = head; cur != null ; cur = cur.next){
+           System.out.print(cur.val + " ");
+       }
+
+//        Node cur = head;
+//        //循环遍历链表.找到最后一个节点
+//       while (cur != null && cur.next != null){
+//           cur = cur.next;
+//       }
+//       //循环结束则指向最后一个节点
+//        System.out.println(cur.val);
+//
+//        //循环遍历链表.找到倒数第二个节点
+//        while(cur != null && cur.next != null && cur.next.next != null){
+//            cur = cur.next;
+//        }
+//        System.out.println(cur.val);
+        //取链表正数第N个元素
+//        int N = 3;
+//        Node cur = head;
+//        for (int i =1 ;i <N; i++){
+//            cur = cur.next;
+//        }
+        //获取链表长度
+        int count = 0 ;
+        for(Node cur = head; cur != null;cur = cur.next){
+            count++;
+        }
+    //遍历链表，查找链表上是否存在某个元素
+        int toFind = 3;
+        Node cur= head;
+        for(;cur != null ;cur = cur.next){
+            if(cur.val == toFind){
+                break;
+            }
+        }
+        if (cur != null) {
+            System.out.println("找到了");
+        }else {
+            System.out.println("没找到");
+        }
     }
 }
