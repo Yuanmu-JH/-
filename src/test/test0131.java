@@ -1,3 +1,5 @@
+package test;
+
 import java.util.Scanner;
 // 输入一个字符串，输出他的集合
 public class test0131 {

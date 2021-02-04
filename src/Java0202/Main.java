@@ -28,12 +28,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Node head = createList();
+    //    Node head = createList();
 
-
-
-//        //创建带傀儡节点的链表
-//        Node head = createListWithDummy();
+        //创建带傀儡节点的链表
+        Node head = createListWithDummy();
 //        Node newNode = new Node(100);
 //
 //        //尾插一个节点
@@ -123,6 +121,85 @@ public class Main {
 //            System.out.println("没找到");
 //        }
 
+    }
+
+    //返回的链表是不带傀儡节点的链表
+    public static Node arrayToLinkedList(int[] array){
+        //遍历数组，把元素依次进行尾插即可
+        //每次找为节点太麻烦，所以使用引用将尾节点记住
+        //初始情况下，头节点和尾节点都为null
+        Node head = null;
+        Node tail = null;
+        for (int x : array) {
+            Node node = new Node(x);
+            //将node进行尾插，需要判断当前链表是否为空
+            if(head == null){
+                head = node;
+                tail = node;
+            }else {
+                //链表不为空，再进行新的插入时，就不必管head，直接操作tail即可
+                tail.next = node;
+                //一旦插入完成，新节点就变为tail，需要更新tail的指向
+                tail = tail.next;
+            }
+        }
+        return head;
+    }
+
+    public static Node arratToLinkedList2(int [] array){
+        //创建一个带傀儡节点的链表，就不需要分两种情况了
+        //head指向的是傀儡节点
+        Node head = new Node(0);
+        Node tail = null;
+        for (int x :array) {
+            Node node = new Node(x);
+            tail.next = node;
+            tail = tail.next;
+        }
+        return head.next;
+    }
+
+    //不带傀儡节点进行尾删
+    public static Node removeTail(Node head){
+        if(head == null){
+            return null;
+        }
+        if(head .next == null){
+            //链表只有一个节点， 尾删的节点就是这个head本身，此时删除这个节点就变成空链表
+            return null;
+        }
+        //一般情况
+        Node prev = head;
+        Node toDelete = prev.next;
+//        while(prev != null && prev.next != null && prev.next.next!= null){
+//            prev = prev.next;
+//        }
+        while (prev != null && prev.next != null){
+            toDelete = prev.next;
+            if(toDelete.next == null){
+                break;
+            }
+            prev = prev.next;
+        }
+//        prev.next == null;
+        prev.next = toDelete.next;
+        return head;
+    }
+
+    //带傀儡节点进行删除操作
+    public static void deleteWithDummy(Node head,int val){
+        Node prev = head ;
+        while(prev != null &&prev.next != null && prev.next.val != val){
+            prev = prev .next;
+        }
+        //未找到对应节点
+        if(prev == null || prev.next == null){
+            return;
+        }
+        //找到了
+        Node toDelete = prev.next;
+        prev.next = toDelete.next;
+        return;
     }
 
     //根据给定值删除节点
