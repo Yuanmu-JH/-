@@ -8,11 +8,5 @@ public class Node {
         this.val = val;
     }
 
-    @Override
-    public String toString() {
-        return "Node{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
-    }
+
 }
